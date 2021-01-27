@@ -27,6 +27,7 @@ const questions = [
         type: 'input',
         message: 'What command should be run to install necessary dependencies?',
         name: 'install',
+        default: 'npm i'
     },
     {
         type: 'input',
@@ -37,17 +38,20 @@ const questions = [
         type: 'input',
         message: 'Please list your collaborators github username, as well as any tutorials or third-party assets you used for the project.',
         name: 'credits',
+        default: 'N/A'
     },
     {
         type: 'input',
         message: 'What command should be run to run tests?',
         name: 'tests',
+        default: 'npm test'
     },
     {
         type: 'list',
         message: 'Which type of license would you like your project to have?',
         name: 'license',
-        choices: ['MIT License', 'GNU General Public License 3.0', 'Apache License 2.0']
+        choices: ['MIT License', 'GNU General Public License 3.0', 'Apache License 2.0'],
+        default: 'MIT'
     }
 ];
 
@@ -66,8 +70,7 @@ function init() {
         console.log(response.description);
         console.log(response.license);
 
-
-        // const content = generateMarkdown(response);
+        const content = generateMarkdown(response);
     }); 
 }
 
