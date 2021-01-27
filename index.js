@@ -24,6 +24,26 @@ const questions = [
         name: 'description',
     },
     {
+        type: 'input',
+        message: 'What command should be run to install necessary dependencies?',
+        name: 'install',
+    },
+    {
+        type: 'input',
+        message: 'Please write instructions and examples for project use.',
+        name: 'usage',
+    },
+    {
+        type: 'input',
+        message: 'Please list your collaborators github username, as well as any tutorials or third-party assets you used for the project.',
+        name: 'credits',
+    },
+    {
+        type: 'input',
+        message: 'What command should be run to run tests?',
+        name: 'tests',
+    },
+    {
         type: 'list',
         message: 'Which type of license would you like your project to have?',
         name: 'license',
