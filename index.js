@@ -1,8 +1,15 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown");
+const filename = "README.md"
 
 // array of questions for user
 const questions = [
+    {
+        type: 'input',
+        message: 'What is your full name?',
+        name: 'fullName',
+    },
     {
         type: 'input',
         message: 'What is your GitHub username?',
@@ -43,7 +50,7 @@ const questions = [
     {
         type: 'input',
         message: 'What command should be run to run tests?',
-        name: 'tests',
+        name: 'test',
         default: 'npm test'
     },
     {
@@ -56,7 +63,11 @@ const questions = [
 ];
 
 // function to write README file
-function writeToFile(fileName, data) {
+function writeToFile(filename, data) {
+    const content = generateMarkdown(data);
+    fs.writeFile(filename, content, (err) => {
+        err ? console.log(err) : console.log('Generating README...');
+    });
 }
 
 // function to initialize program
@@ -64,13 +75,7 @@ function init() {
     inquirer
     .prompt(questions)
     .then(response => {
-        console.log(response.userName);
-        console.log(response.email);
-        console.log(response.projectName);
-        console.log(response.description);
-        console.log(response.license);
-
-        const content = generateMarkdown(response);
+        writeToFile(filename, response);
     }); 
 }
 
