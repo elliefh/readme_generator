@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
-const filename = "README.md"
+const filename = "GENERATED_README.md"
 
 // array of questions for user
 const questions = [
