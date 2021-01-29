@@ -66,7 +66,7 @@ const questions = [
 function writeToFile(filename, data) {
     const content = generateMarkdown(data);
     fs.writeFile(filename, content, (err) => {
-        err ? console.log(err) : console.log('Generating README...');
+        err ? console.log(err) : console.log('Complete!');
     });
 }
 
@@ -76,6 +76,7 @@ function init() {
     .prompt(questions)
     .then(response => {
         writeToFile(filename, response);
+        console.log('Generating README...');
     }); 
 }
 
