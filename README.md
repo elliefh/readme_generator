@@ -6,13 +6,14 @@ When creating an open source project on GitHub, it’s important to have a high-
 This application quickly and easily creates a professional README file by using a command-line application to generate one. This application was created with the hopes that it can allow the project creator to devote more time to working on the project. 
 
 ## Table of Contents 
-- [README Generator ![License: MIT](https://opensource.org/licenses/MIT)](#readme-generator-)
-- [Description](#description)
-- [Table of Contents](#table-of-contents)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+- [README Generator](#readme-generator)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Links](#links)
+  - [Credits](#credits)
+  - [License](#license)
   
 ## Installation
 The following command should be run to install necessary dependencies: 
@@ -26,8 +27,11 @@ The application will be invoked by using the following command:
 ```bash
 node index.js
 ```
-[screenshots]
-[video_link]
+Please see below for the application walkthrough:
+![image](assets/walkthrough.gif)
+
+## Links
+- [Github Repository] (https://github.com/elliefh/readme_generator)
 
 ## Credits
 * [Inquirer package](https://www.npmjs.com/package/inquirer)
