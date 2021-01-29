@@ -909,7 +909,7 @@ limitations under the License.`
 * [Tests](#tests)
 * [Credits](#credits)
 * [License](#license)
-* [Questions](#license)
+* [Questions](#questions)
   
 ## Installation 
 The following command should be run to install necessary dependencies:\n${data.install}
@@ -923,7 +923,7 @@ The following command should be run for tests:\n${data.test}
 
 ## License \n${license}
 
-## Questions? \nYou can reach me by my GitHub (https://github.com/${data.userName}) and email: ${data.email}`
+## Questions \nYou can reach me by my GitHub (https://github.com/${data.userName}) and email: ${data.email}`
   ;
 }
 
