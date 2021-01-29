@@ -3,8 +3,10 @@ function generateMarkdown(data) {
   const year = 2021;
   let fullName = data.fullName; 
   let license; 
+  let badge;
 
   if (data.license==="MIT License") {
+    badge = [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
     license = 
 `MIT License Copyright (c) ${year} ${fullName} 
     
@@ -15,6 +17,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`
   }
   else if (data.license==="GNU General Public License 3.0") {
+    badge = [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
     license = 
 `GNU GENERAL PUBLIC LICENSE 
 Version 3, 29 June 2007
@@ -692,6 +695,7 @@ Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.`
   }
   else if (data.license==="Apache License 2.0") {
+    badge = [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
     license = 
 `Apache License
 Version 2.0, January 2004
@@ -896,25 +900,30 @@ See the License for the specific language governing permissions and
 limitations under the License.`
   }
 
-  return `# ${data.projectName}
+  return `# ${data.projectName} ${badge}
 ## Description \n${data.description}
 
 ## Table of Contents 
 * [Installation](#installation)
 * [Usage](#usage)
+* [Tests](#tests)
 * [Credits](#credits)
 * [License](#license)
 * [Questions](#license)
   
-## Installation \n${data.install}
+## Installation 
+The following command should be run to install necessary dependencies:\n${data.install}
 
 ## Usage \n${data.usage}
+
+## Tests 
+The following command should be run for tests:\n${data.test}
 
 ## Credits \n${data.credits}
 
 ## License \n${license}
 
-## Questions? \nYou can reach me by my GitHub username: ${data.userName} and email: ${data.email}`
+## Questions? \nYou can reach me by my GitHub (https://github.com/${data.userName}) and email: ${data.email}`
   ;
 }
 
